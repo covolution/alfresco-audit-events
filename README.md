@@ -2,19 +2,19 @@
 Takes Alfresco Audit Data and sends it as Events
 
 ### Overview
-- alfresco-events-audit - Java that contains the AuditEvent bean (needed by the listener for deserialization)
+- alfresco-events-audit - Jar that contains the AuditEvent bean (needed by the listener for deserialization)
 - alfresco-messaging-audit - Configures the Alfresco messaging system with a new audit topic
 - audit-events-amp - Wraps the projects in an amp, for installing in Alfresco.
 
 ### Quick start
-- `mvn install` and the repo amp is in audit-events-amp
+- `mvn install` and the repo amp is in audit-events-amp/target
 
 #### The Sample Listener
 The sample listener is a standard logging listener just with a dependency on the alfresco-events-audit jar 
 (for deserialization of messages)
-`cd sample-listener`
-`mvn install`
-`java -jar target/sample-listener-1.0.0-SNAPSHOT.jar --topic=alfresco.audit.events`
+- `cd sample-listener`
+- `mvn install`
+- `java -jar target/sample-listener-1.0.0-SNAPSHOT.jar --topic=alfresco.audit.events`
 
 ### License
 Copyright (C) 2016 Alfresco Software Limited
