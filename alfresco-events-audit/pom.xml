@@ -26,5 +26,12 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>org.alfresco</groupId>
+          <artifactId>alfresco-data-model</artifactId>
+          <version>${alfresco.version}</version>
+          <classifier>tests</classifier>
+          <scope>test</scope>
+      </dependency>
   </dependencies>
 </project>

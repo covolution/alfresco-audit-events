@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.alfresco</groupId>
+    <artifactId>audit-event-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  <groupId>org.alfresco</groupId>
+  <artifactId>alfresco-messaging-audit</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Extends the messaging/events subsytems so there is an audit topic</name>
+  <properties>
+    <dependency.camel.version>2.13.2</dependency.camel.version>
+    <dependency.gytheio.version>0.2</dependency.gytheio.version>
+    <dependency.alfresco-messaging.version>1.2.4</dependency.alfresco-messaging.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.gytheio</groupId>
+      <artifactId>gytheio-messaging-camel</artifactId>
+      <version>${dependency.gytheio.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-spring</artifactId>
+      <version>${dependency.camel.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.alfresco.services</groupId>
+      <artifactId>alfresco-events-repo-publishing</artifactId>
+      <version>${dependency.alfresco-messaging.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+</project>

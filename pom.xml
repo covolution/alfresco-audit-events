@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.alfresco</groupId>
     <artifactId>audit-event-parent</artifactId>
@@ -13,11 +13,12 @@
 	</parent>
     <modules>
         <module>alfresco-events-audit</module>
+        <module>alfresco-messaging-audit</module>
         <module>audit-events-amp</module>
-    </modules>
+  </modules>
 
     <properties>
-        <dependency.spring.version>3.2.14.RELEASE</dependency.spring.version>
+        <alfresco.version>5.0.1</alfresco.version>
     </properties>
     <build>
         <plugins>

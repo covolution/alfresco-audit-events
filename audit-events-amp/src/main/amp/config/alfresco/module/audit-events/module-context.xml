@@ -19,5 +19,14 @@
 
 <beans>
 
+    <bean id="auditEventPublisher" class="org.alfresco.repo.events.DelegatingEventPublisher" />
+
+    <bean id="auditDAO" class="org.alfresco.repo.domain.audit.events.AuditDaoUsingEventsImpl">
+        <property name="sqlSessionTemplate" ref="auditSqlSessionTemplate"/>
+        <property name="contentService" ref="contentService"/>
+        <property name="contentDataDAO" ref="contentDataDAO"/>
+        <property name="propertyValueDAO" ref="propertyValueDAO"/>
+        <property name="eventPublisher" ref="auditEventPublisher" />
+    </bean>
 
 </beans>
