@@ -14,8 +14,11 @@ import java.util.Map;
  */
 public class AuditEventImpl extends RepositoryEventImpl implements DataItem
 {
+    private Map<String, Serializable> values;
 
-    private final Map<String, Serializable> values;
+    public AuditEventImpl()
+    {
+    }
 
     public AuditEventImpl(String applicationId, String txnId, String networkId, long timestamp, String username, Map<String, Serializable> values)
     {
@@ -27,5 +30,26 @@ public class AuditEventImpl extends RepositoryEventImpl implements DataItem
     public String getDataAsJson()
     {
         return JsonUtil.writeData(values);
+    }
+
+    public void setValues(Map<String, Serializable> values)
+    {
+        this.values = values;
+    }
+
+    @Override
+    public String toString()
+    {
+        final StringBuilder sb = new StringBuilder("AuditEventImpl{");
+
+        sb.append("id=").append(this.id).append(", type=")
+                .append(this.type).append(", username=").append(this.username)
+                .append(", client=").append(this.client)
+                .append(", timestamp=").append(this.timestamp).append(", txnId=")
+                .append(this.txnId).append(", networkId=").append(this.networkId);
+        sb.append(", values=").append(values);
+        sb.append(", dataAsJson='").append(getDataAsJson()).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
