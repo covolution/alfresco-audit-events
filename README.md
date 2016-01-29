@@ -16,6 +16,17 @@ The sample listener is a standard logging listener just with a dependency on the
 - `mvn install`
 - `java -jar target/sample-listener-1.0.0-SNAPSHOT.jar --topic=alfresco.audit.events`
 
+#### Alfresco global properties
+I added this to alfresco-global.properties when running the amp.
+```
+echo '\n ##ActiveMQ Setup' >> $GLOBAL_PROPS \
+ && echo 'messaging.broker.url=failover:(tcp://activemq:61616)?timeout=3000' >> $GLOBAL_PROPS \
+ && echo 'messaging.events.repo.node.targetTopic.endpoint=log:MessagesAreDisgarded?level=OFF' >> $GLOBAL_PROPS \
+ && echo 'audit.alfresco-access.enabled=true' >> $GLOBAL_PROPS \
+ && echo 'messaging.subsystem.autoStart=true' >> $GLOBAL_PROPS \
+ && echo 'events.subsystem.autoStart=true' >> $GLOBAL_PROPS
+```
+
 ### License
 Copyright (C) 2016 Alfresco Software Limited
 
